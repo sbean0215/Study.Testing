@@ -2,7 +2,6 @@ package prj.sample.testing
 
 import android.app.Application
 import android.content.Intent
-import android.util.Log
 import android.widget.Button
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
@@ -11,24 +10,24 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
-import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import androidx.test.ext.junit.rules.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.hamcrest.CoreMatchers
 
 import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 
 import org.hamcrest.CoreMatchers.nullValue
+import org.robolectric.annotation.Config
 import org.hamcrest.CoreMatchers.`is` as IS
 
 
 //@RunWith(RobolectricTestRunner::class)
 @RunWith(AndroidJUnit4::class) //동일
-class RoboletricsTest {
+@Config(application = CustomizingRobolectricTestRunner::class)
+class RobolectricsTest {
 
     @Before
     fun setUp () {

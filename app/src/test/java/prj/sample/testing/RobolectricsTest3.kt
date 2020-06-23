@@ -1,17 +1,19 @@
 package prj.sample.testing
 
 import android.os.Build
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
 
-import org.junit.Assert.assertThat
+import org.junit.Rule
 import org.junit.Test
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class) //동일
-class RoboletricsTest3 {
+class RobolectricsTest3 {
+
+    @get:Rule val myTestRule = MyCustomJUnitRule()
+
 
     @Test
     @Config (sdk = intArrayOf(Build.VERSION_CODES.M))
